@@ -26,6 +26,7 @@ public:
     value operator*(const Vector& rhs);
     Vector operator*(value k);
     Vector& operator*=(value k);
+    value operator[](value i) const;
     value& operator[](value i);
     void setValues(value* v);
     value getValue(int i);
