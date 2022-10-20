@@ -88,16 +88,19 @@ Vector& Vector::operator*=(value k) {
 	return *this;
 }
 
+value Vector::operator[](value i) const {
+	return v_[i];
+}
+
 value& Vector::operator[](value i) {
-	value& a = this->v_[i];
-	return a;
+	return this->v_[i];
 }
 
 std::ostream& operator<<(std::ostream& out, Vector v)
 {
 	out << "{";
 	for (int i = 0; i < NDIM - 1; i++) {
-		out << v.getValue(i) << ", ";
+		out << v.getValue(i) << ",";
 	}
 	out << v.getValue(NDIM - 1) << "}";
 	return out;
